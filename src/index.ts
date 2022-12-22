@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from "express";
 const app: Application = express();
 app.use(express.json());
-const PORT: number = 1234;
+const PORT: number | string = process.env.PORT || 1234;
 require("../config/db");
 import cors from "cors";
 import router from "../Router/router";
