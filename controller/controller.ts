@@ -1,12 +1,12 @@
 import model from "../model/model";
 import { Response, Request } from "express";
 import cloudinary from "../config/cloudinary";
-import { request } from "http";
+// import { request } from "http";
 
 const post = async (req: Request, res: Response): Promise<Response> => {
   try {
-    const image = cloudinary.uploader.upload(req?.params!.id);
-    const { author, coverImage, title, summary, category } = req.body;
+    const image = cloudinary.uploader.upload(req?.file!.path);
+    const { author, title, summary, category } = req.body;
 
     const postBook = await model.create({
       author,

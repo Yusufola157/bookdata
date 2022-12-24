@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const URI =
-  "mongodb+srv://Sukanmi157:Sukanmi157@cluster0.dorzl9v.mongodb.net/iBooks?retryWrites=true&w=majority";
+  "mongodb+srv://Sukanmi157:Sukanmi157@cluster0.dorzl9v.mongodb.net/iBookers?retryWrites=true&w=majority";
 
 mongoose.connect(URI);
 mongoose.connection

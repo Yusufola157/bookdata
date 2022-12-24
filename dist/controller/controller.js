@@ -15,10 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Search = exports.updateViews = exports.getOne = exports.getAll = exports.post = void 0;
 const model_1 = __importDefault(require("../model/model"));
 const cloudinary_1 = __importDefault(require("../config/cloudinary"));
+// import { request } from "http";
 const post = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const image = cloudinary_1.default.uploader.upload(req === null || req === void 0 ? void 0 : req.params.id);
-        const { author, coverImage, title, summary, category } = req.body;
+        const image = cloudinary_1.default.uploader.upload(req === null || req === void 0 ? void 0 : req.file.path);
+        const { author, title, summary, category } = req.body;
         const postBook = yield model_1.default.create({
             author,
             coverImage: image,
